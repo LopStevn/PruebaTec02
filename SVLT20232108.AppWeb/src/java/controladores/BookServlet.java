@@ -5,7 +5,6 @@
 package controladores;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -64,7 +63,7 @@ public class BookServlet extends HttpServlet {
             int result = BookDAL.crear(book);
             if (result != 0) { // Si el result es diferente a cero significa que los datos fueron ingresados correctamente.
                request.setAttribute("confirmacion", "El libro se añadio correctamente");                         
-               request.getRequestDispatcher("Views/Task/confirmacion.jsp").forward(request, response);
+               request.getRequestDispatcher("Views/Books/confirmacion.jsp").forward(request, response);
             } else {
                 // Enviar al jsp de error el siguiente mensaje. No se logro registrar un nuevo registro
                 Utilidad.enviarError("No se logro registrar un nuevo registro", request, response);

@@ -25,20 +25,20 @@
             <div class="row">
                 <div class="col l12 s12">
                     <h5>Crear Tarea</h5>
-                    <form action="Task" method="post">                                   
+                    <form action="Book" method="post">                                   
                         <div class="row">
                             <input type="hidden" name="accion" value="create">
                             <div class="input-field col l3 s12">
-                                <input  id="txtTitle" type="text" name="titulo" required class="validate" maxlength="50">
-                                <label for="txtTitle">Titulo</label>
+                                <input  id="txtTitulo" type="text" name="titulo" required class="validate" maxlength="50">
+                                <label for="txtTitulo">Titulo</label>
                             </div>   
                             <div class="input-field col l3 s12">
-                                <input  id="txtTitle" type="text" name="autor" required class="validate" maxlength="50">
-                                <label for="txtTitle">Autor</label>
+                                <input  id="txtAutor" type="text" name="autor" required class="validate" maxlength="50">
+                                <label for="txtAutor">Autor</label>
                             </div>   
                             <div class="input-field col l3 s12">
-                                <input  id="txtTitle" type="text" name="title" required class="validate" maxlength="50">
-                                <label for="txtTitle">Año de Publicacion</label>
+                                <input  id="txtAño" type="text" name="añoPubli" required class="validate" maxlength="50">
+                                <label for="txtAño">Año de Publicacion</label>
                             </div>   
                         </div>
                         <div class="row">
@@ -64,7 +64,7 @@
                                 </tr>
                             </thead>                       
                             <tbody>                           
-                                <% for (Book taskItemPending : taskPending) {
+                                <% for (Book bookItem : libros) {
                                         int tempNumPage = numPage;
                                         if (numPage > 1) {
                                             countReg++;
@@ -73,18 +73,10 @@
                                         }
                                 %>
                                 <tr data-page="<%= tempNumPage%>">
-                                    <td><%=taskItemPending.getTitle()%></td>  
-                                    <td><%=taskItemPending.getDescription()%></td>  
-                                    <td><%=taskItemPending.getDateCreate()%></td>  
-                                    <td><%=taskItemPending.getStatus()%></td>  
+                                    <td><%=bookItem.getTitulo()%></td>  
+                                    <td><%=bookItem.getAutor()%></td>  
+                                    <td><%=bookItem.getAñoPubli()%></td>  
                                     <td>
-                                        <div style="display:flex">
-                                            <form action="Task" method="post">
-                                                <input type="hidden" name="accion" value="complete">
-                                                <input type="hidden" name="id" value="<%=taskItemPending.getId()%>">
-                                                <button type="sutmit" class="waves-effect waves-light btn blue"><i class="material-icons right">add</i>Complete</button>
-                                            </form>                                                                                                                             
-                                        </div>
                                     </td>                                   
                                 </tr>
                                 <%}%>                                                       
@@ -97,14 +89,6 @@
                 <div class="col l12 s12">
                     <jsp:include page="/Views/Shared/paginacion.jsp">
                         <jsp:param name="numPage" value="<%= numPage%>" />                        
-                    </jsp:include>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col l12 s12">
-                    <jsp:include page="/Views/Shared/paginacion.jsp">
-                        <jsp:param name="numPage" value="<%= numPageComplete%>" />                        
                     </jsp:include>
                 </div>
             </div>

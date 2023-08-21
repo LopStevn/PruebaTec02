@@ -34,7 +34,7 @@ public class Book {
         return Titulo;
     }
 
-    public void setTitulo(String Nombre) {
+    public void setTitulo(String Titulo) {
         this.Titulo = Titulo;
     }
 
@@ -61,6 +61,7 @@ public class Book {
     public void setTop_aux(int top_aux) {
         this.top_aux = top_aux;
     }
+
     
     
 }

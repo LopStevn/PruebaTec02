@@ -47,11 +47,11 @@ public class BookDAL {
         int result;
         String sql;
         try (Connection conn = ComunDB.obtenerConexion();) { // Obtener la conexion desde la clase ComunDB y encerrarla en try para cierre automatico
-            sql = "INSERT INTO Books(Titulo,Autor,AñoPubli) VALUES(?,?,?)"; // Definir la consulta INSERT a la tabla de Rol utilizando el simbolo ? para enviar parametros
+            sql = "INSERT INTO Books(Titulo,Autor,Año) VALUES(?,?,?)"; // Definir la consulta INSERT a la tabla de Rol utilizando el simbolo ? para enviar parametros
             try (PreparedStatement ps = ComunDB.createPreparedStatement(conn, sql);) { // Obtener el PreparedStatement desde la clase ComunDB
                 ps.setString(1, pBook.getTitulo()); // Agregar el parametro a la consulta donde estan el simbolo ? #1  
                 ps.setString(2, pBook.getAutor()); 
-                ps.setInt(2, pBook.getAñoPubli()); 
+                ps.setInt(3, pBook.getAñoPubli()); 
                 result = ps.executeUpdate(); // Ejecutar la consulta INSERT en la base de datos
                 ps.close(); // Cerrar el PreparedStatement
             } catch (SQLException ex) {
@@ -69,7 +69,7 @@ public class BookDAL {
         int result;
         String sql;
         try (Connection conn = ComunDB.obtenerConexion();) { // Obtener la conexion desde la clase ComunDB y encerrarla en try para cierre automatico
-            sql = "UPDATE Books SET Tituloe=?,Autor=?,Año=? WHERE Id=?"; // Definir la consulta UPDATE a la tabla de Rol utilizando el simbolo ? para enviar parametros
+            sql = "UPDATE Books SET Titulo=?,Autor=?,Año=? WHERE Id=?"; // Definir la consulta UPDATE a la tabla de Rol utilizando el simbolo ? para enviar parametros
             try (PreparedStatement ps = ComunDB.createPreparedStatement(conn, sql);) { // Obtener el PreparedStatement desde la clase ComunDB
                 ps.setString(1, pBook.getTitulo()); // Agregar el parametro a la consulta donde estan el simbolo ? #1  
                 ps.setString(2, pBook.getAutor());
@@ -118,7 +118,7 @@ public class BookDAL {
         pIndex++;
         pBook.setAutor(pResultSet.getString(pIndex)); // index 3
         pIndex++;
-        pBook.setAñoPubli(pResultSet.getByte(pIndex)); // index 4
+        pBook.setAñoPubli(pResultSet.getInt(pIndex)); // index 4
         return pIndex;
     }
     
