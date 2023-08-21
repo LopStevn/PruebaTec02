@@ -1,0 +1,36 @@
+# Ignorar archivos generados por NetBeans
+nbproject/
+build/
+dist/
+nbactions.xml
+nb-configuration.xml
+
+# Ignorar archivos de configuración de NetBeans
+nb-configuration.xml
+nbactions.xml
+
+# Ignorar archivos de respaldo
+*~
+*.bak
+
+# Ignorar archivos de configuración de IDE
+.idea/
+.vscode/
+
+# Ignorar archivos de configuración de Maven
+target/
+*.iml
+
+# Ignorar archivos private.xml en cualquier carpeta nbproject/private/
+**/nbproject/private/private.xml
+
+# Ignorar archivos private.xml en cualquier carpeta nbproject/private/
+* private.xml
+
+# Ignorar archivos private.xml en las carpetas nbproject/private/ de AccesoADatos y EntidadesDeNegocio
+SVLT20232108.AccesoADatos/nbproject/private/*.xml
+SVLT20232108.EntidadesDeNegocio/nbproject/private/*.xml
+
+# Ignorar archivos private.xml en las carpetas nbproject/private/ de AccesoADatos y EntidadesDeNegocio
+/SVLT20232108/nbproject/private/private.xml
+/SVLT20232108.EntidadesDeNegocio/nbproject/private/private.xml
