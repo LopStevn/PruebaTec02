@@ -3,7 +3,7 @@
 <html>
     <head>        
         <jsp:include page="/Views/Shared/title.jsp" />
-        <title>Error de la aplicación</title>
+        <title>Home</title>
 
     </head>
     <body>
@@ -11,8 +11,8 @@
         <main class="container"> 
             <div class="row">
                 <div class="col l12 s12">
-                    <h4>Succedio el siguiente error en la aplicación</h4> 
-                    <span style="color: red"><%= request.getAttribute("error") %></span> 
+                    <h1>PRUEBA TECNICA 02</h1> 
+                    <span>Sistema Web que permite agregar y ver una lista de libros</span> 
                 </div>
             </div>            
         </main>

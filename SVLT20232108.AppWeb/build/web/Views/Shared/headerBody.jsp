@@ -1,17 +1,18 @@
-<%-- 
-    Document   : headerBody
-    Created on : 21 ago. 2023, 08:12:30
-    Author     : MINEDUCYT
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%@page import="utils.*"%>
+<nav>
+    <div class="nav-wrapper blue">
+        <a href="Home" class="brand-logo">Books System</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>       
+        <ul class="right hide-on-med-and-down">  
+            <li><a href="">Inicio</a></li>
+            <li><a href="">Libreria</a></li>          
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+      <li><a href="">Inicio</a></li>
+    <li><a href="">Tareas</a></li>  
+</ul>
+
